@@ -1,12 +1,35 @@
-# React + Vite
+# Mayahuel — Control de Mezcal y Reportes
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación para **controlar ventas por comanda** y **medir consumo de mezcales** en bar. Genera **reportes diarios y mensuales** (tickets vendidos, métodos de pago, productos más vendidos, consumo por categoría, etc.).
 
-Currently, two official plugins are available:
+> Cliente: **Mezcalería Mayahuel**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## Objetivo
+Centralizar la información de **comandas**, **productos** y **movimientos de inventario** para obtener indicadores claros del negocio y reducir mermas.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Funcionalidades clave
+- **Comandas y ventas**
+  - Alta de comandas (folio, mesa, mesero/a, apertura/cierre).
+  - Detalle de productos por comanda (cantidad, precio, importe).
+  - **Método de pago** por ticket: efectivo / tarjeta.
+- **Reportes**
+  - **Diario**: total de tickets, ventas del día, **ticket promedio**, desglose por método de pago, **Top 5** productos, lista de tickets con **desglose de productos**.
+  - **Mensual**: ventas acumuladas, tendencia por día, participación por categoría, top productos, comparativo contra mes anterior.
+  - Exportación a **Excel/PDF/CSV**.
+- **Inventario de mezcal**
+  - Existencias iniciales, **entradas/salidas/ajustes**.
+  - Consumo estimado por ventas (ml por porción × cantidad).
+  - Alertas por **stock bajo**.
+- **Dashboards** (diario y mensual) con filtros por rango de fechas y categoría.
+
+---
+
+##  Arquitectura (sugerida)
+- **Frontend**: React + Vite  
+- **Backend**: Node.js + Express  
+- **DB**: PostgreSQL
+
